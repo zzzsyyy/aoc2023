@@ -1,9 +1,10 @@
 mod day1;
+mod day2;
 
+use anyhow::Result;
 use std::env;
-use anyhow::Result; 
 
-fn main() -> Result<()>{
+fn main() -> Result<()> {
     let args: Vec<String> = env::args().collect();
     if args.len() != 2 {
         println!("Usage: cat inputs/<day>.txt | cargo run <day_number>");
@@ -19,9 +20,10 @@ fn main() -> Result<()>{
 
     match day_number {
         1 => day1::run(),
+        2 => day2::run(),
         _ => {
             println!("Day not implemented");
             Ok(())
-        },
+        }
     }
 }
